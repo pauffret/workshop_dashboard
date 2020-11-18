@@ -3,40 +3,42 @@
     <div class="title">
       <h1>Bienvenue sur WorkshopDashboard !</h1>
     </div>
-      <b-container class="bv-example-row">
-        <b-row>
+      <b-container>
 
-          <b-col>
-            <b-card title="nb personnes dans le batiment" sub-title="Card subtitle">
+        <b-row class="grid-card justify-content-md-center">
+          <b-col cols="4">
+            <b-card bg-variant="dark" title="Nombre de personnes dans le batiment :">
               <b-card-text>
-                {{compteur.nombrePersonnesActuel}}
+                <h1 v-if="compteur.nombrePersonnesActuel != null">{{compteur.nombrePersonnesActuel}}</h1>
+                <h1 v-else>0</h1>
               </b-card-text>
               <b-card-text>{{compteur.dateCompteur}}</b-card-text>
             </b-card>
           </b-col>
-
-          <b-col>
-            <b-card title="nb d'entrée" sub-title="Card subtitle">
-              <b-card-text>
-                {{compteur.nombreEntrees}}
-              </b-card-text>
-            </b-card>
-          </b-col>
-
-          <b-col>
-            <b-card title="nb sortie" sub-title="Card subtitle">
-              <b-card-text>
-                {{compteur.nombreSorties}}
-              </b-card-text>
-            </b-card>
-          </b-col>
-
         </b-row>
 
-        <b-row>
-
+        <b-row class="grid-card">
           <b-col>
-            <b-card title="nb entrée de la semaine" sub-title="Card subtitle">
+            <b-card bg-variant="dark" title="Nombre d'entrées aujourd'hui :">
+              <b-card-text>
+                <h1 v-if="compteur.nombreEntrees != null">{{compteur.nombreEntrees}}</h1>
+                <h1 v-else>0</h1>
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col>
+            <b-card bg-variant="dark" title="Nombre de sorties aujourd'hui :">
+              <b-card-text>
+                <h1 v-if="compteur.nombreSorties != null">{{compteur.nombreSorties}}</h1>
+                <h1 v-else>0</h1>
+              </b-card-text>
+            </b-card>
+          </b-col>
+        </b-row>
+
+        <b-row class="grid-card">
+          <b-col>
+            <b-card bg-variant="dark" title="nb entrée de la semaine">
               <b-card-text>
                 Some quick example text to build on the <em>card title</em> and make up the bulk of the card's
                 content.
@@ -44,9 +46,8 @@
               <b-card-text>A second paragraph of text in the card.</b-card-text>
             </b-card>
           </b-col>
-
           <b-col>
-            <b-card title="nb entrée du mois" sub-title="Card subtitle">
+            <b-card bg-variant="dark" title="nb entrée du mois">
               <b-card-text>
                 Some quick example text to build on the <em>card title</em> and make up the bulk of the card's
                 content.
@@ -54,8 +55,8 @@
               <b-card-text>A second paragraph of text in the card.</b-card-text>
             </b-card>
           </b-col>
-
         </b-row>
+
       </b-container>
   </div>
 </template>
@@ -82,5 +83,9 @@ export default {
 </script>
 
 <style scoped>
+
+.grid-card {
+  padding: 0.5%;
+}
 
 </style>
