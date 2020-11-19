@@ -38,7 +38,7 @@
         <!------------------------------------------------------------------------->
 
         <div class="separate-grid">
-          <h3>Sélectionner une date pour accèder à ses informations</h3>
+          <h3>Sélectionner une date pour accéder à ses informations</h3>
         </div>
 
         <b-row class="grid-card">
